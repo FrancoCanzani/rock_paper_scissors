@@ -1,28 +1,41 @@
-// Function to define the computer choice
+let userScore = 0;
+let computerScore = 0;
 
-let values = ["rock", "paper", "scissors"];
-let index = Math.floor(Math.random() * values.length);
+function game() {
 
-function getComputerChoice() {
-  return values[index];
-}
+  for (let i = 0; i < 5; i++) {
 
-let computerChoice = getComputerChoice();
-let userChoice = (prompt("Please select rock, paper or scissors."));
-userChoice = userChoice.toLowerCase();
+    let values = ["rock", "paper", "scissors"];
+    let index = Math.floor(Math.random() * values.length);
 
-/* Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection - and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
-Make your function’s playerSelection parameter case-insensitive (so users can input rock, ROCK, RocK or any other variation). */
+    function getComputerChoice() {
+      return values[index];
+    }
 
-function roundOfGame(userChoice, computerChoice) {
+    let computerChoice = getComputerChoice();
+    let userChoice = (prompt("Please select rock, paper or scissors."));
+    userChoice = userChoice.toLowerCase();
+
+    function roundOfGame(userChoice, computerChoice) {
   
-  if (userChoice === computerChoice) {
-    return("It is a tie");
-  } else if ((userChoice === "rock" && computerChoice === "scissors") || (userChoice === "paper" && computerChoice == "rock") || (userChoice === "scissors" && computerChoice === "paper")) {
-    return("Player wins!")
-  } else {
-    return("Computer wins!")
+      if ((userChoice !== 'rock') && (userChoice !== 'paper') && (userChoice !== 'scissor')) {
+        i-=1;
+        return(`What's "${userChoice}"? Please enter a valid input.`);
+      }
+      else if (userChoice === computerChoice) {
+        return("It is a tie");
+      } else if ((userChoice === "rock" && computerChoice === "scissor") || (userChoice === "paper" && computerChoice == "rock") || (userChoice === "scissor" && computerChoice === "paper")) {
+        userScore = userScore+=1;
+        return(`Player wins! ${userChoice} beats ${computerChoice}. User score = ${userScore} and computer score = ${computerScore}`)
+      } else {
+        computerScore = computerScore+=1;
+        return(`Computer wins! ${computerChoice} beats ${userChoice}. User score = ${userScore} and computer score = ${computerScore}`)
+      }
+    }
+
+    console.log(roundOfGame(userChoice, computerChoice));
   }
+
 }
 
-console.log(roundOfGame(userChoice, computerChoice));
+game()
