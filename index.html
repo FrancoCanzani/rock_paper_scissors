@@ -7,34 +7,45 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <title>Rock, Paper, Scissors</title>
 </head>
+
 <body>
   <h1>Let's play Rock - Paper - Scissors</h1>
-  <h3>These are the rules: Rock wins against scissors; paper wins against rock; and scissors wins against paper. If both players throw the same hand signal, it is considered a tie, and play resumes until there is a clear winner.</h3>
+  <h3 class="rules">These are the rules: Rock wins against scissors; paper wins against rock; and scissors wins against paper. If both players throw the same hand signal, it is considered a tie, and play resumes until there is a clear winner.</h3>
   
   <h2>Let's play! Choose your weapon!</h2>
 
   <div class="buttons">
-    <div><button class="rock">Rock &#129704</button></div>
-    <div><button class="paper">Paper &#128195</button></div>
-    <div><button class="scissors">Scissors &#9986</button></div>
+    <div><button class="button rock">Rock &#129704</button></div>
+    <div><button class="button paper">Paper &#128195</button></div>
+    <div><button class="button scissors">Scissors &#9986</button></div>
   </div>
 
   <div class="scoreboard">
     <div class="playerScore">
       <h1>Player</h1>
-      <div class="player"></div>
+      <div class="player">0</div>
+    </div>
+    <div class="console">
+      <h1>Result</h1>
+      <div class="scanner"></div>
     </div>
     <div class="computerScore">
-      <h1>Computer</h1>
-      <div class="computer"></div>
+      <h1>Computer &#x1f916</h1>
+      <div class="computer">0</div>
     </div>
   </div>
 
+  <button class="playAgain">PLAY AGAIN</button>
 
-  <footer>Created by Franco Canzani. #Github link</footer>
+
+  <footer>Created by Franco Canzani. <a href="https://github.com/FrancoCanzani/rock_paper_scissors" target="_blank">Github repo of the game.</a> <br>For more information, visit the <a href="https://wrpsa.com/" target="_blank">official website</a> of the Rock, Paper, Scissors association.</footer>
+
   <script src="file.js"></script>
 
 </body>
