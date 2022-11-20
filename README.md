@@ -1,5 +1,7 @@
 # Rock-Paper-Scissors
 
+https://francocanzani.github.io/rock_paper_scissors
+
 A simple game of rock paper scissors, built with JavaScript.
 
 [The Odin Project - Foundations Course](https://www.theodinproject.com/courses/foundations)
