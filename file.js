@@ -51,7 +51,7 @@ function game() {
     scanner.innerText = "You lose the round!"
     if (computerScore == 5) {
       disableButtons()
-      scanner.innerText = "You lost the game 🤦‍♂️!"
+      scanner.innerText = "You lose the game 🤦‍♂️!"
 
   }
     }
@@ -74,4 +74,6 @@ scissors.addEventListener("click", function(){
   return(userChoice = 'scissors', game());
 });
 
+// Reset button to reload the page once the game is over
 resetBtn.addEventListener('click',() => location.reload());
+
