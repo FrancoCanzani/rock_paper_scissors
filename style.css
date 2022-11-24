@@ -1,13 +1,17 @@
 * {
-    padding: 0;
-    margin: 0;
+    margin-top: 4px;
     font-family: 'Roboto', sans-serif;
 }
+
+.content-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 960px;
+  }
 
 h1 {
     text-align: center;
     font-weight: bolder;
-    padding: 20px;
     font-family: 'Alfa Slab One', cursive;
 }
 
@@ -38,7 +42,6 @@ h2 {
 .scoreboard {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
     margin-top: 30px;
     margin-bottom: 40px;
 }
@@ -52,7 +55,7 @@ h2 {
     margin-top: 10px;
     padding: 30px;
     border-radius: 0.75em;
-    box-shadow: 15px 15px 30px #bebebe,
+    box-shadow: 15px 15px 30px #d8d8d8,
                 -15px -15px 30px #ffffff;
 }
 
@@ -63,7 +66,7 @@ div .computerScore, .playerScore, .console {
 }
 
 div.player, .computer {
-    width: 100px;
+    width: 70px;
     height: 14px;
 }
 
@@ -77,7 +80,6 @@ div.player, .computer {
     display: inline-block;
     cursor: pointer;
     outline: none;
-    border: 0;
     vertical-align: middle;
     text-decoration: none;
     font-family: inherit;
@@ -143,38 +145,68 @@ div.player, .computer {
    }
 
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 1rem; 
     text-align: center;  
-    margin-bottom: 30px;
+    margin-top: 30px;
   }
 
-  
+.play_again_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .playAgain {
-    display: block;
-    margin: 0 auto;
-    padding: 1.3em 3em;
-    font-size: 14px;
-    font-weight: bolder;
-    color: #000;
-    background-color: #fff;
-    border: none;
-    border-radius: 0.75em;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
+    font-weight: 600;
     cursor: pointer;
-    outline: none;
-  }
+    color: #000000;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    background: #c5ffb7;
+    border: 2px solid #000000;
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+   }
+
+.playAgain:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000;
+    border-radius: inherit;
+    -webkit-box-shadow: 0 0 0 2px #ffffff, 0 0.625em 0 0 #ffe3e2;
+    box-shadow: 0 0 0 2px #ffffff, 0 0.625em 0 0 #ffe3e2;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+   }
   
 .playAgain:hover {
-    background-color: #23c483;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-    color: #fff;
-    transform: translateY(-7px);
-  }
+        background: #b1ff9e;
+        -webkit-transform: translate(0, 0.25em);
+        transform: translate(0, 0.25em);
+    }
   
 .playAgain:active {
-    transform: translateY(-1px);
-  }
+        background: #98ff7e;
+        -webkit-transform: translate(0em, 0.75em);
+        transform: translate(0em, 0.75em);
+    }
+
+.playAgain:active::before {
+    -webkit-box-shadow: 0 0 0 2px #ff006a, 0 0 #ff006a;
+    box-shadow: 0 0 0 2px #ff006a, 0 0 #ff006a;
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
+   }

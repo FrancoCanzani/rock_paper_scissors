@@ -18,15 +18,18 @@
 </head>
 
 <body>
+
+  <div class="content-wrapper">
+
   <h1>Rock - Paper - Scissors</h1>
-  <h3 class="rules">These are the rules: Rock wins against scissors; paper wins against rock; and scissors wins against paper. If both players throw the same signal, it is considered a tie, and play resumes until there is a clear winner.</h3>
+  <h3 class="rules">These are the rules: Rock wins against scissors; paper wins against rock; and scissors wins against paper. If both players throw the same signal, it is considered a tie, and play resumes until there is a clear winner. First to 5 points wins the game!</h3>
   
   <h2>Let's play! Choose your weapon!</h2>
 
   <div class="buttons">
-    <div><button class="button rock">Rock &#129704</button></div>
-    <div><button class="button paper">Paper &#128195</button></div>
-    <div><button class="button scissors">Scissors &#9986</button></div>
+    <div><button class="button rock">Rock 🪨</button></div>
+    <div><button class="button paper">Paper 🧻</button></div>
+    <div><button class="button scissors">Scissors ✂️</button></div>
   </div>
 
   <div class="scoreboard">
@@ -34,19 +37,23 @@
       <h1>Player 🙂</h1>
       <div class="player">0</div>
     </div>
+    <div class="computerScore">
+      <h1>Computer 🤖</h1>
+      <div class="computer">0</div>
+    </div>
     <div class="console">
       <h1>Result</h1>
       <div class="scanner"></div>
     </div>
-    <div class="computerScore">
-      <h1>Computer &#x1f916</h1>
-      <div class="computer">0</div>
-    </div>
   </div>
 
+<div class="play_again_button">
   <button class="playAgain">PLAY AGAIN</button>
+</div>
 
   <footer>Created by Franco Canzani. <a href="https://github.com/FrancoCanzani/rock_paper_scissors" target="_blank">Github repo of the game.</a> <br>For more information, visit the <a href="https://wrpsa.com/" target="_blank">official website</a> of the Rock, Paper, Scissors association.</footer>
+
+</div>
 
   <script src="file.js"></script>
 

@@ -15,17 +15,22 @@ let computerScore = 0;
 player.innerText = userScore;
 computer.innerText = computerScore;
 
+// Function that disables the buttons when one player gets to 5 points
 function disableButtons() {
   buttons.forEach(elem => {
       elem.disabled = true
   })
 }
 
+let result_rock = '🪨';
+let result_paper = '🧻';
+let result_scissors = '✂️'
+
 // Main game function
 
 function game() {
 
-  let values = ["rock", "paper", "scissors"]; /* The possibilities the computer can choose */
+  let values = [result_rock, result_paper, result_scissors]; /* The possibilities the computer can choose */
   let index = Math.floor(Math.random() * values.length); /* I use the random built in function to randomly pick a value from the array */
 
   function getComputerChoice() { /* Function for the computer choice */
@@ -38,17 +43,17 @@ function game() {
   function roundOfGame(userChoice, computerChoice) {
 
     if (userChoice === computerChoice) {
-      scanner.innerText = "It is a tie!"
-    } else if ((userChoice === "rock" && computerChoice === "scissors") || (userChoice === "paper" && computerChoice == "rock") || (userChoice === "scissors" && computerChoice === "paper")) {
+      scanner.innerText = `${userChoice} = ${computerChoice}`
+    } else if ((userChoice === result_rock && computerChoice === result_scissors) || (userChoice === result_paper && computerChoice == result_rock) || (userChoice === result_scissors && computerChoice === result_paper)) {
       player.innerText = userScore+=1;
-      scanner.innerText = "You win the round!"
+      scanner.innerText = `${userChoice} > ${computerChoice}`
       if (userScore == 5) {
         disableButtons()
         scanner.innerText = "You win the game 🥳!"
       }
     } else {
     computer.innerText = computerScore+=1;
-    scanner.innerText = "You lose the round!"
+    scanner.innerText = `${userChoice} < ${computerChoice}`
     if (computerScore == 5) {
       disableButtons()
       scanner.innerText = "You lose the game 🤦‍♂️!"
@@ -63,15 +68,15 @@ function game() {
 
 
 rock.addEventListener("click", function(){
-  return(userChoice = 'rock', game())
+  return(userChoice = result_rock, game())
 });
 
 paper.addEventListener("click", function(){
-  return(userChoice = 'paper', game());
+  return(userChoice = result_paper, game());
 });
 
 scissors.addEventListener("click", function(){
-  return(userChoice = 'scissors', game());
+  return(userChoice = result_scissors, game());
 });
 
 // Reset button to reload the page once the game is over
